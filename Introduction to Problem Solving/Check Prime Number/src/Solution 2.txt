@@ -1,0 +1,35 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int count = 0;
+        int sqrtN = (int)Math.sqrt(N);
+
+        for(int i = 1; i <= sqrtN; i++)
+        {
+            if(N % i == 0)
+            {
+                if((N / i) == i)
+                {
+                    count++;
+                }else
+                {
+                    count = count + 2;
+                }
+            }
+
+            if(count > 2)
+            {
+                System.out.print("NO");
+                return;
+            }
+        }
+
+        System.out.print("YES");
+    }
+}
